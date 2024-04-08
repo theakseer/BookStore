@@ -1,6 +1,6 @@
-import express from 'express';
-import { Book } from '../models/bookModel.js';
-const booksRouter =express.Router();
+const express = require('express');
+const { Book } = require('../models/bookModel');
+const booksRouter = express.Router();
 
 
 // save a new book
@@ -107,4 +107,4 @@ booksRouter.delete('/:id', async function(req, res) {
     }
 })
 
-export default booksRouter;
+module.exports = booksRouter;

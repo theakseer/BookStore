@@ -11,7 +11,7 @@ const ShowBook = () => {
 
   useEffect(() => {
     setLoading(true)
-    axios.get(`http://localhost:8080/books/${id}`)
+    axios.get(`https://backend-bookstore-jpni.onrender.com/books/${id}`)
     .then(response=>{
       setBook(response.data)
       setLoading(false)

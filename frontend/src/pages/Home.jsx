@@ -13,7 +13,7 @@ const Home = () => {
   const [loading, setLoading] = useState(false)
   useEffect(() => {
     setLoading(true);
-    axios.get('http://localhost:8080/books')
+    axios.get('https://backend-bookstore-jpni.onrender.com/books')
       .then(response => {
         setBooks(response.data.data)
         // console.log(response.data.data)

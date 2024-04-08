@@ -1,12 +1,13 @@
-import express from 'express';
-// import { PORT, mongoDBUrl } from './config.js';
-import mongoose from 'mongoose';
-import booksRouter from './routes/booksRoute.js';
-import cors from 'cors'
-import dotenv from 'dotenv' 
+const express = require('express');
+// const { PORT, mongoDBUrl } = require('./config.js');
+const mongoose = require('mongoose');
+const booksRouter = require('./routes/booksRoute');
+const cors = require('cors');
+const dotenv = require('dotenv');
+
 
 dotenv.config()
-const PORT = process.env.PORT || 3000; 
+const PORT = process.env.PORT || 4000; 
 const app = express();
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 app.use(express.json()); // Parse JSON bodies
@@ -21,8 +22,8 @@ app.use(cors()); // for every x origin
 
 // for every x
 app.get('/', (req, res) => {
-    console.log(req);
-    return res.status(404).send("Welcoe to MERN Stack projectk")
+    // console.log(req);
+    return res.send("Welcoe to MERN Stack projectk")
 })
 
 app.use('/books', booksRouter)
@@ -37,3 +38,5 @@ mongoose.connect(process.env.MONGO_DB_URL)
     .catch(err => {
         console.log(err);
     });
+
+    module.exports = app

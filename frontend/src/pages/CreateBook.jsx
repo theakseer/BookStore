@@ -19,7 +19,7 @@ const CreateBook = () => {
     const data = {title, author, publishYear}
     setLoading(true)
     axios
-      .post(`http://localhost:8080/books/add`, data)
+      .post(`https://backend-bookstore-jpni.onrender.com/books/add`, data)
       .then(() =>{
         setLoading(false)
         navigate('/')

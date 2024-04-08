@@ -16,7 +16,7 @@ const EditBook = () => {
 
   useEffect(() => {
     setLoading(true)
-    axios.get(`http://localhost:8080/books/${id}`)
+    axios.get(`https://backend-bookstore-jpni.onrender.com/books/${id}`)
      .then(response=>{
       setTitle(response.data.title)
       setAuthor(response.data.author)
